@@ -1,0 +1,31 @@
+<section id="login">
+  
+    <div class="bloco-login-container">
+      <div class="alert" id="alertError">
+        <p>Email ou senha incorretos. Favor verificar e tentar novamente</p>
+      </div>
+      <div class="bloco-login">
+        <form [formGroup]="formUsuario"  (ngSubmit)="onSubmit()" id="forms" >
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="email@mail.com.br" type="email" required value="usuario" formControlName="email" (click)="input()" (keyup)="inputKey()"  id="usuario"  >
+              <label >Usuarios</label>
+            </div>
+            <div class="input-field col s12">
+              <input placeholder="******" type="password" required value="senha" formControlName="senha" (keyup)="inputKey()"  (click)="input()" id="senha" >
+              <a id="mostrarSenha"   (click)="mostrarSenha()"><img src="./../assets/img/eye.png"></a>
+              <a id="retirarSenha"   (click)="retirarSenha()"><img src="./../assets/img/eye_close.png"></a>
+              <label >Senha</label>
+            </div>
+            <div class="input-field col s12 btn-login-container"> 
+              <button disabled type="submit" id="btnLogin"> Entrar </button>
+              
+              
+            </div>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+    
+  </section>

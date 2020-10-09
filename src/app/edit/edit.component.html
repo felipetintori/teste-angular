@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<section id="cadastro">
+    <div class="bloco-container" *ngFor="let registro of registros">
+
+        <div class="bloco-cadastro" *ngIf="(registro.id) == this.url[2] "   >
+            <div class="row" >
+                <div class="col s12">
+                    <h2 id="tituloCadastro">Editar</h2>
+                </div>
+            </div>
+
+            <form [formGroup]="formCadastro" (ngSubmit)="atualizar(registro.id)" id="forms">
+                <div class="row" >
+                    <div class="input-field col s12">
+                        <input placeholder="CPF" disabled type="number" name="cpf" formControlName="cpf"  [(ngModel)]="registro.cpf"  id="cpf">
+                        <label>CPF</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Nome Completo" disabled type="text"  name="nome" formControlName="nome" [(ngModel)]="registro.nome" id="nome">
+
+                        <label>Nome</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Valor da divida em R$" type="text"  name="valor" formControlName="valor" id="valor" [(ngModel)]="registro.valorDivida">
+
+                        <label>Valor da Divida</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="dd/mm/aaaa" type="date" formControlName="data"  [(ngModel)]="registro.dataInclusao"  name="data" id="data">
+
+                        <label>Data da inclusão</label>
+                    </div>
+                    <div class="input-field col s12 btn-cadastro-container">
+                        <button type="submit" id="btnEdit"> Guardar Alteração </button>
+
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

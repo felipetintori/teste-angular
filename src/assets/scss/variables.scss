@@ -1,0 +1,40 @@
+// ::::::::::::::::Variables:::::::::::::::::::::
+// Cores
+$color-body-default:#f3f3f3;
+$color-white-default:#fff;
+$color-blue-default: #3d7ecc;
+$color-border-default: #ededed;
+$color-txt-default:#9f9f9f;
+$color-btn-login: #cccccc;
+$color-alert-danger: #f8d7da;
+$color-header-default: #d8d8d8;
+$color-btn-default: #5bd77f;
+// Fim Cores
+
+// Media Query
+$mobile:740px;
+$tablet:991px;
+
+// Media Query
+
+// ::::::::::::::::Mixins:::::::::::::::::::::
+
+@mixin inputDefault {
+    border:2px solid $color-border-default;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    height: 45px;
+    position: relative;
+    background-color: #FFF;
+    color: $color-txt-default;
+    &::placeholder{
+        color: $color-txt-default;
+    }
+    &:focus{
+        border: 2px solid $color-blue-default;
+    }
+}
+
+// ::::::::::::::::Mixins:::::::::::::::::::::
+

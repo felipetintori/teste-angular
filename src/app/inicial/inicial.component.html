@@ -1,0 +1,79 @@
+<app-header></app-header>
+<section id="inicial" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col m9 s12">
+                <app-search></app-search>
+                
+            </div>
+            <div class="col m3 s12">
+                <a class="btn" href="/cadastro">Adicionar</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>CPF</th>
+                            <th >Nome</th>
+                            <th>Valor da divida</th>
+                            <th>Data de Inclusão</th>
+                            <th>Nº do contrato</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let registro of registros" class="tr-registro" id="tr-{{registro.id}}">
+                            <td id="cpf-{{registro.id}}">{{registro.cpf}}</td>
+                            <td>{{registro.nome}}</td>
+                            <td>R$ {{registro.valorDivida}}</td>
+                            <td>{{registro.dataInclusao}}</td>
+                            <td>{{registro.numeroContrato}}</td>
+                            <td class="opcoes" >
+                                <ul>
+                                    <li>
+                                        <span class="material-icons">more_vert</span>
+                                        <ul>
+                                            <li><a href="edit/{{registro.id}}" id="edit-{{registro.id}}" > <span class="material-icons">edit</span> Editar</a></li>
+                                            <li><a (click)="removerRegistros(registro.id)"  id="del-{{registro.id}}"><span class="material-icons">delete</span> Deletar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="lista-mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col m6 s12" *ngFor="let registro of registros">
+                    <div class="list-painel" id="painel-{{registro.id}}">
+                        <p id="painel-cpf-{{registro.id}}" class="cpf-list">
+                            <span>CPF:</span> {{registro.cpf}}
+                            <span class="opcoes" >
+                                <ul>
+                                    <li>
+                                        <span class="material-icons">more_vert</span>
+                                        <ul>
+                                            <li><a href="edit/{{registro.id}}" id="edit-{{registro.id}}" > <span class="material-icons">edit</span> Editar</a></li>
+                                            <li><a (click)="removerRegistros(registro.id)"  id="del-{{registro.id}}"><span class="material-icons">delete</span> Deletar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </span>
+                        </p>
+                        <p class="nome-list"><span>NOME:</span> {{registro.nome}}</p>
+                        <p class="valor-list"><span>VALOR DIVIDA:</span> R$ {{registro.valorDivida}}</p>
+                        <p class="data-list"><span>DATA:</span> {{registro.dataInclusao}}</p>
+                        <p class="numero-list"><span>Nº DO CONTRATO:</span> {{registro.numeroContrato}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

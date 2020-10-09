@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<section id="cadastro">
+    <div class="bloco-container">
+
+        <div class="bloco-cadastro">
+            <div class="row">
+                <div class="col s12">
+                    <h2 id="tituloCadastro">Incluir</h2>
+                </div>
+            </div>
+
+            <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" id="forms">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="CPF" type="text" name="cpf"  [textMask]="{mask: mask}" formControlName="cpf" [(ngModel)]="registro.cpf" id="cpf">
+                        <label>CPF</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Nome Completo" type="text"  name="nome" formControlName="nome" [(ngModel)]="registro.nome" id="nome">
+
+                        <label>Nome</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Valor da divida em R$" type="number"  name="valor" formControlName="valor" id="valor" [(ngModel)]="registro.valorDivida">
+
+                        <label>Valor da Divida</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="dd/mm/aaaa" type="date" formControlName="data"  [(ngModel)]="registro.dataInclusao"  name="data" id="data">
+
+                        <label>Data da inclusão</label>
+                    </div>
+                    <div class="input-field col s12 btn-cadastro-container">
+                        <button type="submit" id="btnCadastro"> ADICIONAR ENTRADA </button>
+
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="alert-hide">
+    <div class="alert-box">
+        <div class="alert-box-container">
+            <div class="row">
+                <div class="col s12">
+                    <h2>Quer confirmar a Inclusão do Registro?</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ratione, at harum exercitationem.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <a class="btn-confirm not" (click)="confirme(false)">Não</a>
+                </div>
+                <div class="col s6">
+                    <a class="btn-confirm"  (click)="confirme(true)">Sim</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

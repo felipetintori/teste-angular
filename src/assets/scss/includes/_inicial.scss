@@ -1,0 +1,168 @@
+#inicial{
+    margin-top: 50px;
+    .btn{
+        background-color: $color-btn-default;
+        color: #FFF;
+        height: 45px;
+        padding: 0px 30px;
+        line-height: 45px;
+        box-shadow: none;
+        width: 100%;
+        border-radius: 5px;
+    }
+    table{
+        @media only screen  and (max-width : $tablet){
+            display: none;
+        }
+        thead{
+            tr{
+                border:none;
+                th{
+                    color: $color-txt-default;
+                }
+                
+            }
+        }
+        tbody{
+            tr{
+                border: none;
+                &:nth-child(odd){
+                    background-color: #f2f3f5;
+                }
+                td{
+                    padding: 20px 10px;
+                    &.opcoes{
+                        ul{
+                            position: relative;
+                            li{
+                                ul{
+                                    display: none;
+                                    position: absolute;
+                                    top: 0;
+                                    left: -120px;
+                                    background: #FFF;
+                                    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+                                    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+                                    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+                                    padding: 10px;
+                                    li{
+                                        padding:5px 10px;
+                                        width: 150px;
+                                        a{
+                                            display: block;
+                                            color: $color-txt-default;
+                                            cursor: pointer;
+                                            span{
+                                                font-size: 17px;
+                                                vertical-align: top;
+                                                padding-top: 2px;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    ul{
+                                        display: block;
+                                       
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #lista-mobile{
+        display: none;
+        @media only screen  and (max-width : $tablet){
+            display: block;
+        }
+        .list-painel{
+            border: 1px solid $color-border-default;
+            border-top: 3px solid $color-blue-default;
+            height: 260px;
+            
+            background-color: #f7f7f7;
+            margin-bottom: 15px;
+            
+            border-radius: 5px;
+            @media only screen  and (max-width : 600px){
+                height: auto;
+
+            }
+            p{
+                color: $color-txt-default;
+                margin: 0px;
+                padding: 10px;
+                border-bottom: 1px solid $color-border-default;
+                position: relative;
+                &:last-child{
+                    border: none;
+                }
+                span{
+                    font-weight: bold;
+                    
+                    &.opcoes{
+                        font-weight: normal;
+                        position: absolute;
+                        right: 0;
+                        top: -6px;
+                        ul{
+                            // position: relative;
+                            li{
+                                ul{
+                                    display: none;
+                                    position: absolute;
+                                    z-index: 2;
+                                    top: 20px;
+                                    right: 0;
+                                    background: #FFF;
+                                    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+                                    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+                                    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+                                    padding: 10px;
+                                    li{
+                                        padding:5px 0px;
+                                        width: 100px;
+                                        a{
+                                            display: block;
+                                            color: $color-txt-default;
+                                            cursor: pointer;
+                                            span{
+                                                font-size: 17px;
+                                                vertical-align: top;
+                                                padding-top: 2px;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    ul{
+                                        display: block;
+                                       
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.cpf-list{
+                    font-size: 18px;
+                    padding: 10px 10px;
+                    
+                    background-color: #FFF;
+                    
+                    color: $color-blue-default;
+                }
+                &.nome-list{
+                    text-transform: uppercase;
+                    
+                    
+                }
+            }
+            
+        }
+    }
+}

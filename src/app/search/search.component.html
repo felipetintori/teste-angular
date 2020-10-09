@@ -1,0 +1,8 @@
+<form [formGroup]="formSearch" (ngSubmit)="search()" id="formSearch"> 
+    
+    <input placeholder="Insira o CPF a ser pesquisado" [textMask]="{mask: mask}" formControlName="cpf"  [(ngModel)]="registro.cpf"  type="text">
+    <button type="submit"><span class="material-icons">
+        search
+        </span></button>
+</form>
+  
